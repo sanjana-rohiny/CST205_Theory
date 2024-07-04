@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Collections/src"/>
+	<classpathentry kind="src" path="FirstThread"/>
+	<classpathentry kind="src" path="SimpleThreadJoin"/>
+	<classpathentry kind="src" path="Thread_Susped_Resume_rabbit_tortoise"/>
+	<classpathentry kind="src" path="Thread_synchronize_method"/>
+	<classpathentry kind="src" path="Thread_synchronize_statement"/>
+	<classpathentry kind="src" path="Thread_wait_notify_method"/>
+	<classpathentry kind="src" path="ThredJoin"/>
+	<classpathentry kind="output" path="Collections/bin"/>
+</classpath>

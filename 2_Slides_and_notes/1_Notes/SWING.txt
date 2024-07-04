@@ -1,0 +1,10 @@
+SWING
+====
+While Swing itself doesn't directly correspond to a full-scale graphical subsystem like X11 in Unix-like systems or WDDM/GDI in Windows, it has its own set of classes, rendering mechanisms, and event handling systems specifically designed for creating and managing GUI components.
+
+Swing is built on top of Java's Abstract Window Toolkit (AWT) but introduces a lightweight component model that allows it to render and manage its components independently of the underlying operating system's graphical subsystem. It uses Java's Graphics and Graphics2D APIs to draw shapes, texts, and images on the screen.
+
+while Swing doesn't have a graphical subsystem in the same sense as an OS-specific display system, it does have its own set of mechanisms for rendering and managing GUI components, allowing for platform-independent graphical user interface development within Java applications.
+
+SWING used native os graphical subsusyem, but it has its own rendering mechanism, that maked SWING components shows similar in many operating systems 
+Swing components are drawn using Java's own rendering mechanisms rather than directly using the native OS graphical subsystems like Windows GDI or X11 on Unix-based systems. However, Swing does use certain OS-specific features through the underlying AWT (Abstract Window Toolkit) to interact with the operating system where necessary.

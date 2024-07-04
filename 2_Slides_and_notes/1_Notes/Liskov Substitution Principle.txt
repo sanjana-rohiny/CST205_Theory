@@ -1,0 +1,10 @@
+Liskov Substitution Principle: 
+=============================
+Barbara Liskov
+
+This is one of the fundamental principles of object-oriented programming. 
+
+It states that objects of a derived class should be able to replace objects of the base class without affecting the correctness of the program. 
+
+If you could assign a base class object to a derived class reference, it would violate this principle because the derived class object may have expectations and behaviors that the base class object does not fulfill.
+
