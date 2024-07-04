@@ -1,0 +1,93 @@
+Packages
+========
+1. Packages are containers for classes.
+    - Defines a namespace in which classes are stored.
+    - Classes are stored in system directories with the name of the package.
+2. A package in Java is used to group related classes and interfaces.
+3. It is a naming and visibility control mechanism used to avoid naming conflicts.
+4. Packages are stored in a hierarchical manner.
+    - Packages are organized in a structured, tree-like directory format.
+    - For example, the package `java.util.Scanner` is part of the `util` package:
+      java
+        └── util
+            └── Scanner.java
+      that is the folder structure will be
+  	- java/util/
+  	- Scanner.java files will be inside java/util/ 
+  	 
+5. Type of packages
+-------------------
+   - User defined - created by programmers.
+        – package cbse or package icse 
+        	cbse
+  		 └── Teacher.java
+  		
+  		icse
+  		└── Teacher.java
+  		
+   - InBuilt  - prvided by java.
+	– java.lang:
+		primitive types, strings, math functions, threads, and exception
+	– java.util: 
+		Contains classes such as vectors, hash tables, date etc.
+	– java.io: Stream classes for I/O
+	– java.awt: Classes for implementing GUI – windows, buttons, menus etc.
+	– java.net: Classes for networking
+	– java.applet: Classes for applet development
+	          	 
+6. Defining a Package
+---------------------
+1. To create a package, simply include the package command:
+    ...java code
+    package package_name;
+    // Example: package Sample;
+    ...
+   
+7. Accessing a Package
+----------------------
+1. Use import statement, eg, 
+
+  format: import pkg1[.pkg2].(classname|*);
+  ...java code
+    import java.util.Scanner;
+    import java.util.*;
+  ...
+  
+2. Without importing, eg
+  ...java code
+    cbse.Teacher t1 = new cbse.Teacher();
+    isce.Teacher t2 = new isce.Teacher(); 
+  ...
+  
+Question
+--------   
+Create a package reversepackage. Add a class Reverse in it with a method
+reverse() to print the reverse of a string without using built-in methods. Create
+a class outside the package and use this method to reverse a string.
+    
+    1. create folder reversepackage in working directory
+    	and implement class Reverse.java inside reversepackage folder         
+    4. return to working directory, and implement class TestPkg.java
+        /> javac reversepackage/Reverse.java
+        /> javac TestPkg.java
+        /> java TestPkg
+        
+ // TestPkg.java 
+    import reversepackage.*;
+    public class TestPkg {
+    	public static void main(String[] str) {        
+            Reverse rev = new Reverse();
+            rev.reverse("alice");
+        }
+    } // end of TestPkg class
+    
+  // reversepackage/Reverse.java
+  package reversepackage;
+    public class Reverse {
+        public void reverse(String str) {
+            int len = str.length();
+            for(int i=len; i>0; i--) {
+                System.out.print(str.charAt(i-1));
+            }
+        }
+    }//end of Reverse class 

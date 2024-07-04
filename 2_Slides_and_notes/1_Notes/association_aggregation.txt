@@ -1,0 +1,29 @@
+Association 
+-there is NO strong ownership
+-In a simple association between a Library class and a Book class, the library is associated with books, but it doesn't create or manage individual books. Books can exist independently, and changes in the library (e.g., adding or removing a book) do not imply strong ownership.
+
+Aggregation
+-there is STROG ownership
+In an aggregation relationship between a Car class (whole) and a Wheel class (part), the Car class may create, configure, and manage instances of Wheel. It relies on the existence of wheels to function as a car. This is an example of strong ownership.
+
+
+The relationship between a "Hospital" and a "Doctor" can typically be represented as an association rather than aggregation, as it usually doesn't imply a strong whole-part relationship or ownership. Here's why it's usually considered an association:
+
+Association
+-------------------
+	Student and Teacher
+	Author and Book
+	Customer and Order
+	Person and Address
+	Employee and Department
+	Driver and Car
+
+Aggregation
+------------
+	Car and Engine:
+	Library and Books
+	Computer and Hard Drive
+	University and Departments:
+	House and Rooms:
+	
+

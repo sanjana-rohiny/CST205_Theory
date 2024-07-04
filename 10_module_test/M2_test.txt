@@ -1,0 +1,21 @@
+1. Is it possible to create an object for class A using, A ob = new A(); if the class contains only parameterized constructor? Why?
+
+2. What are different roles of ‘super’ keyword ?, illustrate with example
+
+3. Write a program to check whether a string is palindrome or not. The input is to be accepted through command line parameter.
+
+4. Why is that, in Java the size of ‘char’ datatype is of 2 bytes while that in C is of 1 byte?
+
+5. What is the mechanism for passing arguments to methods in Java? Explain with suitable example.
+
+6. What are different roles of ‘final’ keyword ?, illustrate with example
+
+7. Write a java program to check whether a given number is prime or not.
+
+8. What are different roles of ‘this’ keyword ?, illustrate with example
+
+9. Compare type conversion and type casting, and explain their potential side effects with examples.
+
+10. How static and nonstatic nested classes are created and instantiated?. Illustrate with example.
+
+

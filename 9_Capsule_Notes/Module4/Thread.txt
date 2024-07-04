@@ -1,0 +1,86 @@
+1. The Java Thread Model
+2. The Main Thread
+3. Creating Thread
+-----------------------	
+
+Process:
+	Program/Application
+	It has its own memory, system resource such as file , memory, io mechanism
+	- heap, stack, code segment(compiled code), data segment (global var)
+	They do not share it with other process/program/application
+	
+ulimit -a
+	real-time non-blocking time  (microseconds, -R) unlimited
+	core file size              (blocks, -c) 0
+	data seg size               (kbytes, -d) unlimited
+	scheduling priority                 (-e) 0
+	file size                   (blocks, -f) unlimited
+	pending signals                     (-i) 29473
+	max locked memory           (kbytes, -l) 952868
+	max memory size             (kbytes, -m) unlimited
+	open files                          (-n) 1024
+	pipe size                (512 bytes, -p) 8
+	POSIX message queues         (bytes, -q) 819200
+	real-time priority                  (-r) 0
+	stack size                  (kbytes, -s) 8192
+	cpu time                   (seconds, -t) unlimited
+	max user processes                  (-u) 29473
+	virtual memory              (kbytes, -v) unlimited
+	file locks                          (-x) unlimited
+--------------------------------------------------------------
+	heap size - 64MB
+Thread:
+	Path of exeecution witin a program/process.
+	It is a sequence of instructions that the CPU can execute independently.
+	All program/process has atleast one thread - main thread
+	Threads are lightweight processes within a process/program
+	Multiple threads can exist within a single process
+	They sharing the process's resources, such as memory and open files
+	Each thread has its own execution stack and registers.
+	
+	stack size 512 KB to 1 MB. per thread
+	
+Multitasking:
+	Definition: 
+	ability of an OS to execute multipletasks (processes or threads) concurrently. 
+	It enhances system efficiency by use CPU time concurrently.
+Types:
+    1. Process-Based Multitasking: 
+    		running multiple processes/programs concurrently
+    2. Thread-Based Multitasking: => or Multi-threading
+    		-running multiple threads within the same process concurrently. 
+    		-shares the same memory space and resources of its parent process. 
+                  thats why its called light weight process. 
+
+Advantage of Multithreading
+	- write very efficient programs
+	– that make maximum the use of the CPU, 
+		therfoer idle time can be kept to a minimum
+		
+Single threaded vs Multithreaded
+
+	- single-threaded, one program has to wait for other program to finish 
+		even though the CPU is sitting idle most of the time.
+	- single-threaded use an approach called an "event loop with polling".
+        - Multithreading helps to effectively make use of this idle time
+	- entire environment to be asynchronous
+	
+	read/write - transport interface
+
+The Java Thread Model
+
+Single-threaded systems use an approach called an event loop with polling.
+– In this model, a single thread of control runs in an infinite loop,
+polling a single event queue to decide what to do next.
+
+– In a singled-threaded environment, when a thread blocks (that is,
+suspends execution) because it is waiting for some resource, the
+entire program stops running.
+
+Thread States
+	– New - Thrad t = new Thread()
+	– Runnable –ready to run = t.start()
+	– Running - 
+	– Non-Runnable (Blocked) = t.sleep(1000), or t.wait(), or t.suspend()
+	– Terminated = t.close()
+

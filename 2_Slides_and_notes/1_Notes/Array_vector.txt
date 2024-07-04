@@ -1,0 +1,100 @@
+Arrays
+=======
+Arrays are fixed-size data structures, which means the size of an array must be specified when it is created and cannot be changed later. In contrast, Vector is a dynamically resizable data structure, which means it can grow or shrink as needed.
+
+Arrays are built into the Java language and are part of the java.lang package. They are simple and efficient, but they do not provide many built-in methods for manipulating the elements of the array. Vector, on the other hand, is a class in the java.util package and provides a rich set of methods for adding, deleting, and accessing elements in the collection.
+
+Arrays can store elements of any type, including primitives and objects. Vector can only store objects, not primitives.
+
+Vector
+=======   
+In the Java programming language, a vector is a data structure that implements a growable array of objects. It is part of the java.util package and extends the AbstractList class.
+
+A vector is similar to an array in that it allows you to store and access a collection of objects. However, unlike an array, which has a fixed size that must be specified when it is created, a vector can dynamically resize itself as needed. This means you can add or remove elements from a vector without having to worry about running out of space or having to create a new array.
+
+Vector provides a rich set of methods for manipulating the elements in the collection, including adding, deleting, and accessing elements. It also provides methods for searching and sorting the elements, as well as methods for thread synchronization (to make the vector thread-safe).
+
+Here is an example of how to create and use a vector in Java:
+
+====
+Therefore, Vector is considered a collection because it implements the List interface 
+public class Vector<E> extends AbstractList<E>
+implements List<E>, RandomAccess, Cloneable, Serializable
+
+But it has some extra functions , that collection framework doesnot contain.
+
+package vector;
+/*
+ Arrays
+=======
+Arrays are fixed-size data structures, which means the size of an array must be 
+specified when it is created and cannot be changed later. In contrast, 
+Vector is a dynamically resizable data structure, 
+which means it can grow or shrink as needed.
+
+Arrays are built into the Java language and are part of the java.lang package. 
+They are simple and efficient, but they do not provide many built-in methods 
+for manipulating the elements of the array. Vector, on the other hand, 
+is a class in the java.util package and provides a rich set of methods 
+for adding, deleting, and accessing elements in the collection.
+
+Arrays can store elements of any type, including primitives and objects. 
+Vector can only store objects, not primitives.
+
+Vector
+=======
+In the Java programming language, a vector is a data structure that implements 
+a growable array of objects. It is part of the java.util package and extends 
+the AbstractList class.
+
+A vector is similar to an array in that it allows you to store and access a 
+collection of objects. However, unlike an array, which has a fixed size that 
+must be specified when it is created, a vector can dynamically resize itself
+as needed. This means you can add or remove elements from a vector without
+ having to worry about running out of space or having to create a new array.
+
+Vector provides a rich set of methods for manipulating the elements 
+in the collection, including adding, deleting, and accessing elements.
+It also provides methods for searching and sorting the elements,
+as well as methods for thread synchronization (to make the vector thread-safe).
+
+====
+Vector is considered a collection because it implements the List interface 
+public class Vector<E> extends AbstractList<E>
+implements List<E>, RandomAccess, Cloneable, Serializable
+
+But it has some extra functions , that collection framework doesnot contain.
+*/
+
+
+public class VectorTest {
+
+	public static void main(String[] args) {
+		// create a Vector of strings
+		Vector<String> words = new Vector<>();
+
+		// add elements to the Vector
+		words.add("hello");
+		words.add("world");
+		words.add("!");
+
+		
+		// access an element of the Vector
+		System.out.println(words.get(1)); // prints "world"
+
+		// loop through the Vector and print all the elements
+		for (String word : words) {
+		  System.out.println(word);
+		}
+
+		// remove an element from the Vector
+		words.remove(1);
+
+		// check the size of the Vector
+		System.out.println(words.size()); // prints 2
+
+	}
+
+}
+
+

@@ -1,0 +1,37 @@
+   		  MODULE Test 1
+		Duration 2 hour
+
+
+1. Outline the reasons as of why Java programs are known as “Write Once and
+Run Anywhere” programs?
+
+2. Summarize the need of constructors in Java and list the different types of
+constructors allowed in Java programs.
+
+3. Distinguish between Composition and Aggregation relations that exist in class
+diagram
+
+4. Define encapsulation with a proper example.
+
+5. With a sample program, demonstrate how compile time polymorphism is achieved in
+Java.
+
+6. With a sample program, demonstrate how run time polymorphism is achieved in
+Java
+
+7. Discuss the concept of classes and objects in Java language using an example of
+a ‘student’ object in a Student management application.
+
+8. Bring out the difference between function oriented software design approach
+and object oriented software design approach using the example of Library Management System
+
+9. What are different types of inheritance supported in java.
+
+10. Implement a program to find and display the least common multiple (LCM) of two whole numbers. Least Common Multiple (LCM) of two numbers, num1 and num2 is the smallest positive number that is divisible by both num1 and num2.
+
+Sample input   Op
+-----------------
+5,10           10
+7,9            63  
+
+

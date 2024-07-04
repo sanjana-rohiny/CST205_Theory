@@ -1,0 +1,99 @@
+
+Package
+=======
+Package in java as the name suggests is a pack(group) of
+classes, interfaces and other packages.
+
+Packages are used in Java 
+	1- in order to prevent naming conflicts, 
+	2- to control access of classes/interfaces etc
+	
+Package in java can be categorized in two form
+        1. Built-in - Provided by Java, as a part of standard library
+        	Eg, java.lang, java.util, java.io
+        2. User define - created by Java developers to organize their own classes and code.
+
+Defining user defined package
+============================
+To create a user-defined package, you typically define a package statement 
+at the beginning of your source code file, indicating the package's name 
+
+Eg,
+Here two calsses with same name, Teacher.java is created in two packages
+One for implementation of CBSE Teacher, and the other for ICSE Teacher.
+
+Packages are defines as
+
+package1:  give below statement at the  beginning of Teaher .java for CBSE 
+		package college.staff.cbse;
+
+package2:  give below statement at the  beginning of Teaher .java for ICSE
+		package college.staff.icse;
+
+Here "college.staff.icse" each "." (dot) identidies by a folder
+
+That is, for "college.staff.icse" 
+	The class "Teacher.java" will be inside folder "icse".
+	"icse" folder will be inside folder "staff"
+	"staff" folder will be inside "college".
+
+Similarly
+for "college.staff.cbse"
+	The class "Teacher.java" will be inside folder "cbse".
+	"cbse" folder will be inside folder "staff"
+	"staff" folder will be inside folder "college".
+
+How to use packages
+===================
+Ans: By "import" statement at the top of java file.
+
+eg, 
+import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+
+import college.staff.cbse.*; // Import the CBSE Teacher class
+import college.staff.icse.*; // Import the ICSE Teacher class 
+
+import java.util.*;
+".*" imports all the classes in the package "java.util" 
+
+How to solve naming conflicts
+=============================
+Eg, we have two classes with same name "Teacher.java" 
+and differnet implementation in two packages.
+
+package 1 : college.staff.icse
+         class Teacher.java
+         
+package 2 : college.staff.cbse
+         class Teacher.java
+
+If one Test program uses this, there will be conflict
+to identify, which class of which package, as class name is same  (Teacher)
+
+Soln:
+qualify class with package name as below
+
+1- for ICSE Teacher class
+	college.staff.icse.Teacher icseTeacher = 
+        	new college.staff.icse.Teacher("Alice", "Science", "Biology")
+        	
+ 
+1- for CBSE Teacher class
+	college.staff.cbse.Teacher cbseTeacher = 
+        	new college.staff.cbse.Teacher("Bob", "Math", 10);
+ 
+Compiling classes in package
+============================
+Folder structure program1/college/staff/icse/
+
+program1$ javac college/staff/icse/Teacher.java
+
+-> Teacher.class will be created inside college/staff/icse folder
+
+Running classes package
+=======================
+program1$ java college.staff.icse.Teacher
+
+

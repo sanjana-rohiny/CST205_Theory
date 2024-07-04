@@ -1,0 +1,47 @@
+
+                         PATH & CLASSPATH environment variables
+PATH
+====
+
+    Definition: It’s an environment variable.
+    Purpose: Specifies the directories where executable programs are located.
+    Multiple Entries: The path can include multiple entries, 
+           separated by : (for UNIX/Linux/Mac) or ; (for Windows).
+
+Purpose of the PATH Variable in Java
+------------------------------------
+The PATH variable allows you to compile and run Java programs from any directory, as the JDK's "bin" directory (where the java and javac executables are located) is added to the PATH environment variable during installation.
+
+so while running
+> java Palindrome
+OS will search 'java' executable in the PATH directory, and execute from there
+
+Otherwise, we would be using
+> /bin/java Palindrome
+
+CLASSPATH
+===========
+
+Definition: It’s an environment variable.
+
+Purpose: The classpath tells the JVM or compiler where to look for 
+	the .class files or libraries needed by the program.
+
+External Libraries: When using external libraries (e.g., JAR files), 
+	the classpath specifies where these libraries are located.
+
+Multiple Entries: The classpath can include multiple entries, 
+	separated by : (for UNIX/Linux/Mac) or ; (for Windows).
+
+Example Commands:
+-----------------
+javac -cp .:lib/somelib.jar MyClass.java  
+java -cp .:lib/somelib.jar MyClass
+
+Default Classpath:
+-----------------
+If the CLASSPATH environment variable is not set, Java uses the current working directory (.) as the default classpath.
+
+
+
+

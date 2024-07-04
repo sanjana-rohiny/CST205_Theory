@@ -1,0 +1,12 @@
+FileInputStream and BufferedInputStream are both classes in Java used for reading data from files, but they serve different purposes and have different characteristics. Here are the key differences between the two:
+
+Buffering:
+FileInputStream reads data from a file directly into a byte array and provides no 	built-in buffering. Each call to read() results in a file I/O operation.
+
+BufferedInputStream is a wrapper around an input stream (such as FileInputStream) that provides buffering. It reads data from the underlying stream into an internal buffer and then delivers the data from the buffer to the caller. This buffering can improve I/O performance significantly, as it reduces the number of actual file I/O operations.
+
+Read Performance:
+FileInputStream can be less efficient when reading small amounts of data at a time, as it may result in frequent disk I/O operations.
+
+BufferedInputStream is designed to minimize disk I/O operations by reading and storing data in larger chunks. This can lead to better performance, especially when reading small amounts of data.
+

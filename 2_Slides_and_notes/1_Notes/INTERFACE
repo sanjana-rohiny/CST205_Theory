@@ -1,0 +1,169 @@
+INTERFACE
+=========
+
+1. Similar to class, can contain
+    - Abstract Methods: Methods with no implementation.
+    - Default Methods: Methods with implementation.
+    - Static Methods: Methods that belong to the interface itself.
+    - Variables: are constants, implicitely public static final. 
+    
+2. definition
+   interface iface_name {
+    // Abstract methods
+    // Default methods
+    // Static methods
+    // Constants
+}
+
+
+3. Usage
+--------
+class implementing_class implements iface_name {
+   // Implement abstract methods
+}
+
+ abstract methods : Must implement all abstract methods in implementing class
+ default methods  : inherited and available in implemeting class, 
+       		    so not required override, but can override.
+ static methods   : NOT inherited to impemeting class- 
+                    so, do not implement static methods, 
+                    can access using interface name just like any static method.
+ Constants        : are public, so classes can refer directly like a class variable.
+
+ 
+interface Animal {
+    // Abstract method - no implementation
+    void sound();  
+    
+    // default function - with implementation
+    default void walk() {
+        System.out.println("Animal is walking");
+    }
+    
+    // static function  
+    static void info() {
+        System.out.println("This is an animal.");
+    }
+    
+    // constant - implicitely qualified as public static final
+    int LEGS = 4;  
+}
+
+class Dog implements Animal {
+    // Must implement this method, else gives compilation error
+    public void sound() {  
+        System.out.println("Dog barks");
+    }
+    public int getLegs() {
+        // inherited, hence use directly..!
+        return LEGS;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Calling the static method from the interface 
+        Animal.info();  
+        
+        // Calling the default method from the interface 
+        Dog myDog = new Dog();
+        myDog.walk();
+        
+        // Can access constant using interface name
+        int noOfLegs = Animal.LEGS;
+    }
+}
+ 
+4. Any number of classes can implement an interface.
+5. interface can extend another interface 
+6. interface can NOT implement another interface
+7. interface can NOT extend another class
+8. interface can NOT implement another class
+ 
+9. One class can implement any number of interfaces.
+	– This helps to achieve multiple inheritance in Java. 
+
+Eg, Multiple Inheritance in java
+	
+    interface Animal {
+        void eat();
+    }
+
+    interface Bird {
+        void fly();
+    }
+
+    class Bat implements Animal, Bird {
+        // Implementing abstract method from Animal interface
+        public void eat() {
+            System.out.println("Bat eats insects.");
+        }
+
+        // Implementing abstract method from Bird interface
+        public void fly() {
+            System.out.println("Bat can fly.");
+        }
+    }
+
+public class Main {
+    public static void main(String[] args) {
+        Bat bat = new Bat();
+        bat.eat();  // From Animal interface
+        bat.fly();  // From Bird interface
+    }
+}
+    
+Question
+--------
+Show how the following inheritance hierarchy can be implemented in Java.
+                  
+         _____        
+        |_A__|
+   ____/     \_____ 
+  |_B__|     |_C__|
+       \_____/
+        |_D__|
+  
+  D inheriting from B & C -> multiple inheritance, not supported in java.
+  Hence B can be a Class and C can be an Interface, 
+  or vice-versa or both are interfaces.
+  
+  Let B be a class and C be an Interface.
+  
+  B and C inherit from A, where C is an interface. 
+  Interface C can not inherit a class. 
+  Hence A must be another Interface. 
+  
+  interface A {
+	void f1();
+  }
+
+  class B implements A {
+	//implement A interface function
+	public void f1() {
+	    System.out.println("Class B: f1");
+	}
+  }
+
+  interface C extends A {
+	void f2();
+  }
+
+  class D extends B implements C {
+	//implement C interface function
+	public void f2() { 
+	    System.out.println("Class D: f2");
+	}
+  }
+
+  public class ITest {
+	public static void main(String[] args) {
+		D d = new D();
+		d.f1(); // extended function from B
+		d.f2(); // implemented function from C
+		
+	}
+  }
+
+  
+

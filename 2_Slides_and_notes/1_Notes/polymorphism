@@ -1,0 +1,50 @@
+Polimorphism - How it happens at Compile time and Run  time
+==========================================================
+
+Shape shapeRectangle = new Rectangle();
+shapeRectangle.draw();
+
+Compile time
+============
+
+Shape shapeRectangle = new Rectangle();
+--------------------------------------
+Declaration: The compiler recognizes that you are declaring a variable named shapeRectangle of type Shape.
+
+Instantiation: The compiler recognizes that you are instantiating an object of type Rectangle using the new keyword.
+
+Assignment: The object of type Rectangle is being assigned to the shapeRectangle variable of type Shape.
+
+The compiler knows that Rectangle is a subclass of Shape (assuming that Rectangle inherits from Shape). So assigning a subclass object to Base class variable is OK. No error.
+ 
+shapeRectangle.draw();
+--------------------- 
+When compiler reaches here, it check the type of shapeRectangle. 
+The type is Shape. Then it checks, if there is any function draw() in class Shape().
+In this case, Shape class has draw(). So compile with NO Error.
+
+Run time
+========
+Shape shapeRectangle = new Rectangle();
+--------------------------------------
+Here at runtime, an actual object of Rectangle is created on the heap memory when you use new Rectangle();.
+
+shapeRectangle.draw();
+---------------------
+Instead of looking the type of shapeRectangle (which is Shape class), When you call a method like shapeRectangle.draw();, Java (means JVM) looks at the actual object that shapeRectangle points to, which is a Rectangle object in this case.
+
+Now Java checks if the Rectangle class has overridden the draw method.(that has a draw() function in its class type (Shape)). Here we have draw() is avaialble in Shape class.
+If it has, it uses the overridden method (draw() defined in derived class) in the Rectangle class.
+This is called Dynamic Method Dispatch.
+
+Question:
+=========
+Why shapeRectangle.calculateArea(); give Compilation Error ?
+When compiler reaches here, it check the type of shapeRectangle. 
+The type is Shape. Then it checks, if there is any function calculateArea() in class Shape().
+In this case, Shape class has no function named calculateArea(). So compile with Error.
+
+
+
+
+
